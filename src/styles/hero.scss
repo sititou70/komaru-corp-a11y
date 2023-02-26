@@ -1,0 +1,58 @@
+.hero {
+  position: relative;
+  width: 100%;
+
+  video.bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  > div {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-width: calc(var(--px-max-width) * 1.2);
+    margin: auto;
+    padding: 5vw;
+    padding-top: 100px;
+    font-size: calc(min(7vw, 3rem));
+    font-weight: bold;
+    line-height: 1.5;
+
+    h1 {
+      margin: 0;
+      font-size: 0.7em;
+      text-align: right;
+    }
+
+    p {
+      margin: 0;
+      text-align: right;
+    }
+
+    .word1 {
+      margin-top: 5vw;
+      font-size: 2em;
+      line-height: 1;
+    }
+
+    .word2 {
+      position: relative;
+      width: fit-content;
+      font-size: 2em;
+      line-height: 1;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0.1em;
+        background-color: var(--color-accent);
+      }
+    }
+  }
+}

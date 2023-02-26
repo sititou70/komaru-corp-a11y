@@ -1,0 +1,14 @@
+.footer {
+  background-color: var(--color-base);
+  font-size: 0.8rem;
+
+  .container {
+    margin: auto;
+    padding: 20px 40px;
+    max-width: var(--px-max-width);
+
+    a {
+      text-decoration: none;
+    }
+  }
+}
