@@ -1,0 +1,22 @@
+.company {
+  background-image: url("../assets/bg_dark.jpg");
+  background-size: cover;
+  color: var(--color-base);
+
+  .container {
+    margin: auto;
+    padding: 20px 40px 70px;
+    max-width: var(--px-max-width);
+
+    dl {
+      dt {
+        font-size: 1.5rem;
+      }
+
+      ul {
+        padding: 0;
+        margin: 0;
+      }
+    }
+  }
+}

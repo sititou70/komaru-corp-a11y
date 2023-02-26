@@ -1,0 +1,34 @@
+{
+  "name": "a11y-training",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "run-p sass:watch dev-server",
+    "dev-server": "cd src; browser-sync start --server --no-notify --no-ui --no-ghost-mode --files '**/*'",
+    "static-server": "cd src; http-server --port 8080",
+    "sass:build": "sass src/styles/index.scss src/styles/compiled.css",
+    "sass:watch": "sass -w src/styles/index.scss src/styles/compiled.css",
+    "cypress:open": "wait-on http://localhost:8080 && cypress open --e2e",
+    "cypress:run": "wait-on http://localhost:8080 && cypress run",
+    "test:open": "npm run sass:build && run-p cypress:open static-server",
+    "test": "run-p -r cypress:run static-server",
+    "build": "rm -rf dist && npm run sass:build && cp -r src dist && rm -rf dist/**/*.scss",
+    "build-gh-pages": "git checkout bad && npm run build && mv dist dist_bad && git checkout enhanced && npm run build && mv dist dist_enhanced && git checkout gh-pages && rm -rf bad enhanced && mv dist_bad bad && mv dist_enhanced enhanced",
+    "postinstall": "cp -r node_modules/normalize.css/normalize.css src/styles"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@testing-library/cypress": "9.0.0",
+    "browser-sync": "2.27.12",
+    "http-server": "14.1.1",
+    "npm-run-all": "4.1.5",
+    "wait-on": "7.0.1"
+  },
+  "dependencies": {
+    "normalize.css": "8.0.1",
+    "sass": "1.58.3"
+  }
+}

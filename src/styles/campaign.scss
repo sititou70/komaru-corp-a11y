@@ -1,0 +1,92 @@
+.campaign {
+  color: var(--color-base);
+  background-color: var(--color-main);
+
+  .container {
+    margin: auto;
+    padding: 20px 40px 70px;
+    max-width: var(--px-max-width);
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      input {
+        // 操作しようとすると謎の枠線が表示されてしまうため無効化
+        outline: none;
+      }
+
+      .required {
+        color: yellow;
+      }
+
+      .tel {
+        input {
+          width: 3em;
+        }
+      }
+
+      fieldset {
+        width: auto;
+
+        .radio {
+          label {
+            display: block;
+            position: relative;
+
+            input[type="radio"] {
+              display: none;
+
+              &:checked {
+                + span {
+                  &::before {
+                    background-color: var(--color-accent);
+                  }
+                }
+              }
+            }
+            span {
+              position: relative;
+              margin-left: 0.5em;
+              padding-left: 1.25em;
+
+              &::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 0;
+                display: inline-block;
+                width: 0.7em;
+                height: 0.7em;
+                background-color: var(--color-main);
+                border-radius: 50%;
+                box-shadow: 0 0 0 0.3em var(--color-base);
+                transform: translateY(-50%);
+              }
+            }
+          }
+        }
+
+        input[type="text"] {
+          width: 100%;
+        }
+      }
+
+      button {
+        display: block;
+        width: fit-content;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .result {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  img {
+    max-width: 300px;
+  }
+}
