@@ -1,0 +1,64 @@
+.works {
+  background-image: url("../assets/bg_light.jpg");
+  background-size: cover;
+
+  .container {
+    margin: auto;
+    padding: 20px 40px 70px;
+    max-width: var(--px-max-width);
+
+    ul {
+      display: grid;
+      gap: 50px;
+      grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      max-width: 900px;
+      margin-left: auto;
+
+      a {
+        position: relative;
+        display: block;
+        min-width: 400px;
+        text-decoration: none;
+        opacity: 0;
+        &:hover {
+          filter: brightness(70%);
+        }
+        &.is-displayed {
+          animation: appear 0.5s both ease;
+        }
+
+        span {
+          position: absolute;
+          display: block;
+          padding: 0 0.5em;
+          color: var(--color-base);
+          font-size: 0.8em;
+          font-weight: bold;
+          background-color: var(--color-accent);
+        }
+
+        img {
+          display: block;
+          width: 100%;
+          margin-bottom: 1em;
+        }
+      }
+    }
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    clip-path: inset(-1em 100% -1em -1em);
+    transform: translateX(-50%);
+  }
+  100% {
+    opacity: 1;
+    clip-path: inset(-1em);
+    transform: translateX(0);
+  }
+}

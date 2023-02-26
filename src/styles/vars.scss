@@ -1,0 +1,24 @@
+/* colors */
+:root {
+  --color-accent: #c92c6d;
+  --color-main: #2f4f52;
+  --color-base: #f2f3f7;
+  --color-text: #001122;
+  --color-link: #002e33;
+  --color-link-visited: #d53f7d;
+}
+
+/* px */
+:root {
+  --px-max-width: 1000px;
+}
+
+/* z-index */
+:root {
+  // 通常のフロー
+  --zindex-level0: 0;
+  // 浮いているが画面を専有しないもの
+  --zindex-level1: 10;
+  // 画面を専有するもの。モーダルなど
+  --zindex-level2: 100;
+}
