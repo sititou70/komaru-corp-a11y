@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>株式会社Komaru</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="icon" href="./assets/favicon.png" />
+
+    <link rel="stylesheet" href="./styles/normalize.css" />
+    <link rel="stylesheet" href="./styles/compiled.css" />
+
+    <script src="./scripts/nav.js" defer></script>
+    <script src="./scripts/hero.js" defer></script>
+    <script src="./scripts/campaign.js" defer></script>
+    <script src="./scripts/intersectionUtil.js" defer></script>
+  </head>
+  <body>
+    <nav class="navigation">
+      <label class="nav_open">
+        <button class="visually-hidden">MENU</button>
+        <div>MENU</div>
+      </label>
+
+      <dialog class="container" aria-labelledby="nav_menu">
+        <label class="nav_close">
+          <button class="visually-hidden">CLOSE</button>
+          <div>CLOSE</div>
+        </label>
+
+        <h2 id="nav_menu">MENU</h2>
+
+        <ul>
+          <li>
+            <a href="./">Service <span>サービス</span></a>
+          </li>
+          <li>
+            <a href="./">Works <span>実績</span></a>
+          </li>
+          <li>
+            <a href="./">Blog <span>ブログ</span></a>
+          </li>
+          <li>
+            <a href="./">Recruit <span>採用</span></a>
+          </li>
+          <li>
+            <a href="./">About <span>会社情報</span></a>
+          </li>
+          <li>
+            <a href="./">Contact <span>お問い合わせ</span></a>
+          </li>
+        </ul>
+      </dialog>
+    </nav>
+
+    <header class="header">
+      <div class="hero">
+        <video
+          class="bg"
+          src="./assets/herobg.webm"
+          loop
+          muted
+          autoplay
+          playsinline
+          aria-hidden="true"
+          tabindex="-1"
+        ></video>
+
+        <div>
+          <h1>株式会社Komaru</h1>
+          <p>だれもが使えるWebを作る</p>
+          <div class="word1">Tech For</div>
+          <div class="word2">Everyone</div>
+        </div>
+
+        <button type="button" class="stop">STOP</button>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="service">
+        <div class="container">
+          <h2>Service <span>サービス</span></h2>
+          <ul>
+            <li>
+              <a href="./">
+                <span>Web制作</span>
+                <p>
+                  コーポレートサイト、キャンペーンサイト、リクルートサイトなどを制作します。
+                </p>
+                <p>
+                  ヒアリングとフィードバックを丁寧かつ入念に行うことで、お客様のご要望に高い精度でお応えします。
+                </p>
+                <img src="./assets/right_arrow.svg" alt="" />
+              </a>
+            </li>
+            <li>
+              <a href="./">
+                UIデザイン
+                <img src="./assets/right_arrow.svg" alt="" />
+              </a>
+            </li>
+            <li>
+              <a href="./">
+                イラスト、動画、メディア制作
+                <img src="./assets/right_arrow.svg" alt="" />
+              </a>
+            </li>
+            <li>
+              <a href="./">
+                サイト運用・監視
+                <img src="./assets/right_arrow.svg" alt="" />
+              </a>
+            </li>
+            <li>
+              <a href="./">
+                SEOサポート
+                <img src="./assets/right_arrow.svg" alt="" />
+              </a>
+            </li>
+            <li>
+              <a href="./">
+                広告運用代行
+                <img src="./assets/right_arrow.svg" alt="" />
+              </a>
+            </li>
+            <li>
+              <a href="./">
+                DX支援
+                <img src="./assets/right_arrow.svg" alt="" />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="works">
+        <div class="container">
+          <h2>Works <span>制作実績</span></h2>
+          <ul>
+            <li>
+              <a href="./" class="observe">
+                <span>ホームページ制作</span>
+                <img src="./assets/work01.jpg" alt="" />
+                五百年の歴史と共に 駒瑠神社 公式サイト
+              </a>
+            </li>
+            <li>
+              <a href="./" class="observe">
+                <span>ホームページ制作</span>
+                <img src="./assets/work02.jpg" alt="" />
+                STAY HUNGRY, Comaru Co., Ltd
+                公式コーポレートサイト、リクルートサイト
+              </a>
+            </li>
+            <li>
+              <a href="./" class="observe">
+                <span>キャンペーンサイト制作</span>
+                <img src="./assets/work03.jpg" alt="" />
+                清く、正しく komaruコスメ 有限会社Komaru堂
+              </a>
+            </li>
+            <li>
+              <a href="./" class="observe">
+                <span>ホームページ制作</span>
+                <img src="./assets/work04.jpg" alt="" />
+                喫茶こまる 公式サイト
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="campaign">
+        <div class="container">
+          <h2>Campaign <span>キャンペーン</span></h2>
+
+          <p>
+            以下のアンケートにお答えいただいた方の中から、抽選で100名様にオリジナルグッズをプレゼントしています。
+          </p>
+
+          <form>
+            <label>
+              <span>氏名：</span>
+              <input name="name" autocomplete="name" />
+            </label>
+
+            <label class="tel">
+              <span class="required">電話番号（必須）：</span>
+              <p>ハイフン・スペース無し、半角数字</p>
+              <input name="tal" required="required" autocomplete="tel" />
+            </label>
+
+            <fieldset>
+              <legend>Komaruの良いところ</legend>
+
+              <div class="radio">
+                <label>
+                  <input
+                    type="radio"
+                    name="advantage"
+                    value="polite"
+                    class="visually-hidden"
+                    checked
+                  />
+                  <span>ヒアリングが丁寧</span>
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    name="advantage"
+                    value="polite"
+                    class="visually-hidden"
+                  />
+                  <span>価格が安い</span>
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    name="advantage"
+                    value="others"
+                    class="visually-hidden"
+                  />
+                  <span>その他</span>
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    name="advantage"
+                    value="none"
+                    class="visually-hidden"
+                  />
+                  <span>特にない</span>
+                </label>
+              </div>
+
+              <label>
+                その他の良いところ：
+                <input type="text" name="others" disabled />
+              </label>
+            </fieldset>
+
+            <button type="button">アンケートを送信</button>
+          </form>
+
+          <h3>先月のアンケート結果</h3>
+          <p>
+            先月実施したKomaru満足度アンケートの結果は以下のとおりでした。今後もお客様にご満足いただけるよう努めて参ります。
+          </p>
+          <img src="./assets/graph2.jpg" alt="満足 70%、不満 30%" />
+        </div>
+      </div>
+
+      <div class="company">
+        <div class="container">
+          <h2>Company <span>会社概要</span></h2>
+          <dl>
+            <dt>社名</dt>
+            <dd>株式会社Komaru</dd>
+
+            <dt>所在地</dt>
+            <dd>〒123-xxxx 駒瑠市駒瑠町 1-23-45 コマルビル2F</dd>
+
+            <dt>事業内容</dt>
+            <dd>
+              <ul>
+                <li>Webサイト制作事業</li>
+                <li>システム開発事業</li>
+                <li>コンサルティング事業</li>
+              </ul>
+            </dd>
+
+            <dt>代表者名</dt>
+            <dd>鵜狩五郎（うかり・ごろう）</dd>
+
+            <dt>代表電話番号</dt>
+            <dd>090-xxxx-xxxx</dd>
+
+            <dt>設立年月</dt>
+            <dd>2023年03月</dd>
+          </dl>
+
+          <strong>
+            注意：お電話のかけ間違いが多くなっております。十分ご注意ください
+          </strong>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        このサイトはアクセシビリティの学習のために作られました。詳しくは
+        <a href="https://github.com/sititou70/komaru-corp-a11y">
+          サイトのGitHubリポジトリ
+        </a>
+        を参照してください
+      </div>
+    </footer>
+  </body>
+</html>

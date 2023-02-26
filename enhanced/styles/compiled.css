@@ -1,0 +1,505 @@
+/* colors */
+:root {
+  --color-accent: #c92c6d;
+  --color-main: #2f4f52;
+  --color-base: #f2f3f7;
+  --color-text: #001122;
+  --color-link: #002e33;
+  --color-link-visited: #531d46;
+}
+
+/* px */
+:root {
+  --px-max-width: 1000px;
+}
+
+/* z-index */
+:root {
+  --zindex-level0: 0;
+  --zindex-level1: 10;
+  --zindex-level2: 100;
+}
+
+html {
+  color: var(--color-text);
+  font-size: 18px;
+  font-family: sans-serif;
+  line-height: 2;
+  background-color: var(--color-base-light);
+}
+
+a {
+  color: var(--color-link);
+}
+a:visited {
+  color: var(--color-link-visited);
+}
+
+h2 {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  column-gap: 0.5em;
+  width: fit-content;
+  color: var(--color-base);
+  font-size: 2.5rem;
+  font-style: italic;
+  font-family: sans-serif;
+  background-color: var(--color-main);
+}
+h2 span {
+  font-size: 0.5em;
+}
+
+.focus-indicator, *:focus-visible,
+button[type=button]:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+  box-shadow: 0 0 0 8px var(--color-base);
+}
+
+.visually-hidden {
+  clip-path: inset(100%);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+html {
+  color: var(--color-text);
+  font-size: 18px;
+  font-family: sans-serif;
+  line-height: 2;
+  background-color: var(--color-base-light);
+}
+
+a {
+  color: var(--color-link);
+}
+a:visited {
+  color: var(--color-link-visited);
+}
+
+h2 {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  column-gap: 0.5em;
+  width: fit-content;
+  color: var(--color-base);
+  font-size: 2.5rem;
+  font-style: italic;
+  font-family: sans-serif;
+  background-color: var(--color-main);
+}
+h2 span {
+  font-size: 0.5em;
+}
+
+.focus-indicator, .navigation .nav_open button:focus-visible + div,
+.navigation .nav_close button:focus-visible + div, *:focus-visible,
+button[type=button]:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+  box-shadow: 0 0 0 8px var(--color-base);
+}
+
+.visually-hidden {
+  clip-path: inset(100%);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.navigation .nav_open div,
+.navigation .nav_close div {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-weight: bold;
+  background-color: var(--color-base);
+  z-index: var(--zindex-level1);
+}
+.navigation .nav_open div::before, .navigation .nav_open div::after,
+.navigation .nav_close div::before,
+.navigation .nav_close div::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 0.5em;
+  background-color: var(--color-text);
+}
+.navigation .nav_open div:hover,
+.navigation .nav_close div:hover {
+  color: var(--color-accent);
+}
+.navigation .nav_open div:hover::before, .navigation .nav_open div:hover::after,
+.navigation .nav_close div:hover::before,
+.navigation .nav_close div:hover::after {
+  background-color: var(--color-accent);
+}
+.navigation .container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--color-base);
+  z-index: var(--zindex-level2);
+  overflow: auto;
+}
+.navigation .container h2 {
+  margin: 100px auto 20px;
+  font-size: 1rem;
+  font-weight: normal;
+  color: var(--color-text);
+  background-color: transparent;
+}
+.navigation .container ul {
+  max-width: var(--px-max-width);
+  margin: auto;
+  padding: 20px;
+}
+.navigation .container ul li {
+  padding: 1.5em 0;
+  list-style: none;
+}
+.navigation .container ul li a {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 0.5em;
+  align-items: baseline;
+  padding-right: 1em;
+  font-size: 3rem;
+}
+.navigation .container ul li a span {
+  font-size: 0.5em;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+}
+.hero video.bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero > div {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-width: calc(var(--px-max-width) * 1.2);
+  margin: auto;
+  padding: 5vw;
+  padding-top: 100px;
+  font-size: min(7vw, 3rem);
+  font-weight: bold;
+  line-height: 1.5;
+}
+.hero > div h1 {
+  margin: 0;
+  font-size: 0.7em;
+  text-align: right;
+}
+.hero > div p {
+  margin: 0;
+  text-align: right;
+}
+.hero > div .word1 {
+  margin-top: 5vw;
+  font-size: 2em;
+  line-height: 1;
+}
+.hero > div .word2 {
+  position: relative;
+  width: fit-content;
+  font-size: 2em;
+  line-height: 1;
+}
+.hero > div .word2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.1em;
+  background-color: var(--color-accent);
+}
+.hero button {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  padding: 0.7em 1em;
+  border: 2px solid var(--color-text);
+}
+
+.service {
+  background: url("../assets/wireframe.jpg");
+  background-size: cover;
+}
+.service .container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: auto;
+  padding: 20px 40px 70px;
+  max-width: var(--px-max-width);
+}
+.service .container ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 700px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.service .container ul a {
+  position: relative;
+  display: block;
+  padding: 10px 50px 10px 20px;
+  max-width: 500px;
+  background-color: var(--color-base);
+}
+.service .container ul a:hover {
+  color: var(--color-base);
+  background-color: var(--color-accent);
+}
+.service .container ul a:hover p {
+  color: var(--color-base);
+}
+.service .container ul a span {
+  font-size: 2em;
+  font-weight: bold;
+}
+.service .container ul a p {
+  display: inline-block;
+  margin: 0.5em 0;
+  color: var(--color-text);
+}
+.service .container ul a img {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  width: 20px;
+  height: 20px;
+}
+
+.works {
+  background-image: url("../assets/bg_light.jpg");
+  background-size: cover;
+}
+.works .container {
+  margin: auto;
+  padding: 20px 40px 70px;
+  max-width: var(--px-max-width);
+}
+.works .container ul {
+  display: grid;
+  gap: 50px;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 900px;
+  margin-left: auto;
+}
+.works .container ul a {
+  position: relative;
+  display: block;
+  opacity: 0;
+}
+.works .container ul a:hover {
+  filter: brightness(70%);
+}
+.works .container ul a.is-displayed {
+  animation: appear 0.5s both ease;
+}
+@media (prefers-reduced-motion) {
+  .works .container ul a {
+    opacity: 1;
+  }
+}
+.works .container ul a span {
+  position: absolute;
+  display: block;
+  padding: 0 0.5em;
+  color: var(--color-base);
+  font-size: 0.8em;
+  font-weight: bold;
+  background-color: var(--color-accent);
+}
+.works .container ul a img {
+  display: block;
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    clip-path: inset(-1em 100% -1em -1em);
+    transform: translateX(-50%);
+  }
+  100% {
+    opacity: 1;
+    clip-path: inset(-1em);
+    transform: translateX(0);
+  }
+}
+@media (prefers-reduced-motion) {
+  @keyframes appear {
+    100% {
+      opacity: 1;
+      clip-path: inset(-1em);
+      transform: translateX(0);
+    }
+  }
+}
+.company {
+  background-image: url("../assets/bg_dark.jpg");
+  background-size: cover;
+  color: var(--color-base);
+}
+.company .container {
+  margin: auto;
+  padding: 20px 40px 70px;
+  max-width: var(--px-max-width);
+}
+.company .container dl dt {
+  font-size: 1.5rem;
+}
+.company .container dl ul {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  color: var(--color-text);
+  font-size: 18px;
+  font-family: sans-serif;
+  line-height: 2;
+  background-color: var(--color-base-light);
+}
+
+a {
+  color: var(--color-link);
+}
+a:visited {
+  color: var(--color-link-visited);
+}
+
+h2 {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  column-gap: 0.5em;
+  width: fit-content;
+  color: var(--color-base);
+  font-size: 2.5rem;
+  font-style: italic;
+  font-family: sans-serif;
+  background-color: var(--color-main);
+}
+h2 span {
+  font-size: 0.5em;
+}
+
+.focus-indicator, .campaign .container form fieldset .radio label input[type=radio]:focus-visible + span::before, *:focus-visible,
+button[type=button]:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+  box-shadow: 0 0 0 8px var(--color-base);
+}
+
+.visually-hidden {
+  clip-path: inset(100%);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.campaign {
+  color: var(--color-base);
+  background-color: var(--color-main);
+}
+.campaign .container {
+  margin: auto;
+  padding: 20px 40px 70px;
+  max-width: var(--px-max-width);
+}
+.campaign .container form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.campaign .container form .required {
+  color: yellow;
+}
+.campaign .container form p {
+  margin: 0;
+}
+.campaign .container form fieldset {
+  width: auto;
+}
+.campaign .container form fieldset .radio label {
+  display: block;
+  position: relative;
+}
+.campaign .container form fieldset .radio label input[type=radio]:checked + span::before {
+  background-color: var(--color-accent);
+}
+.campaign .container form fieldset .radio label span {
+  position: relative;
+  margin-left: 0.5em;
+  padding-left: 1.25em;
+}
+.campaign .container form fieldset .radio label span::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  display: inline-block;
+  width: 0.7em;
+  height: 0.7em;
+  background-color: var(--color-base);
+  border-radius: 50%;
+  box-shadow: 0 0 0 0.3em var(--color-base);
+  transform: translateY(-50%);
+}
+.campaign .container form fieldset input[type=text] {
+  width: 100%;
+}
+.campaign .container form button {
+  display: block;
+  width: fit-content;
+  padding: 1em;
+  font-weight: bold;
+}
+.campaign img {
+  max-width: 300px;
+}
+
+.footer {
+  background-color: var(--color-base);
+  font-size: 0.8rem;
+}
+.footer .container {
+  margin: auto;
+  padding: 20px 40px;
+  max-width: var(--px-max-width);
+}
+
+/*# sourceMappingURL=compiled.css.map */
