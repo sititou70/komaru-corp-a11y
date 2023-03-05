@@ -1,10 +1,16 @@
+@import "./common.scss";
+
 .navigation {
   position: fixed;
 
   .nav_open,
   .nav_close {
     button {
-      display: none;
+      &:focus-visible {
+        + div {
+          @extend .focus-indicator;
+        }
+      }
     }
 
     div {
