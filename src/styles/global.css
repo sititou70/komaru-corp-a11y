@@ -14,13 +14,6 @@ a {
   }
 }
 
-/* たまに謎の枠線が表示されてしまうため無効化 */
-a,
-button,
-input {
-  outline: none;
-}
-
 h2 {
   display: flex;
   align-items: baseline;
@@ -35,5 +28,16 @@ h2 {
 
   span {
     font-size: 0.5em;
+  }
+}
+
+/* normalize.cssを上書きするためbuttonを個別に指定する */
+*,
+button[type="button"] {
+  &:focus-visible {
+    /* focus-indicator */
+    outline: 2px solid var(--color-accent);
+    outline-offset: 4px;
+    box-shadow: 0 0 0 8px var(--color-base);
   }
 }
