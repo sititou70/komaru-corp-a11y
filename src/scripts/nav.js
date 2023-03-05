@@ -3,8 +3,8 @@ const navCloseButton = document.querySelector(".navigation .nav_close button");
 const navContainer = document.querySelector(".navigation .container");
 
 navOpenButton.addEventListener("click", () => {
-  navContainer.style.display = "block";
+  navContainer.showModal();
 });
 navCloseButton.addEventListener("click", () => {
-  navContainer.style.display = "none";
+  navContainer.close();
 });
