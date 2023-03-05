@@ -27,6 +27,9 @@
         &.is-displayed {
           animation: appear 0.5s both ease;
         }
+        @media (prefers-reduced-motion) {
+          opacity: 1;
+        }
 
         span {
           position: absolute;
@@ -58,5 +61,14 @@
     opacity: 1;
     clip-path: inset(-1em);
     transform: translateX(0);
+  }
+}
+@media (prefers-reduced-motion) {
+  @keyframes appear {
+    100% {
+      opacity: 1;
+      clip-path: inset(-1em);
+      transform: translateX(0);
+    }
   }
 }
