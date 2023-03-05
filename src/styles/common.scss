@@ -30,3 +30,17 @@ h2 {
     font-size: 0.5em;
   }
 }
+
+.focus-indicator {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+  box-shadow: 0 0 0 8px var(--color-base);
+}
+
+// normalize.cssを上書きするためbuttonを個別に指定する
+*,
+button[type="button"] {
+  &:focus-visible {
+    @extend .focus-indicator;
+  }
+}

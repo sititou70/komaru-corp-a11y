@@ -12,11 +12,6 @@
       flex-direction: column;
       gap: 20px;
 
-      input {
-        // 操作しようとすると謎の枠線が表示されてしまうため無効化
-        outline: none;
-      }
-
       .required {
         color: yellow;
       }
