@@ -21,7 +21,6 @@
         position: relative;
         display: block;
         min-width: 400px;
-        text-decoration: none;
         opacity: 0;
         &:hover {
           filter: brightness(70%);
