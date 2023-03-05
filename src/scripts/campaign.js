@@ -9,7 +9,6 @@ const othersTextInput = document.querySelector(
 form.addEventListener("change", () => {
   if (othersRadioButton.checked) {
     othersTextInput.removeAttribute("disabled");
-    othersTextInput.focus();
   } else {
     othersTextInput.setAttribute("disabled", "true");
   }
