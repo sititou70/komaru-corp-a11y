@@ -55,4 +55,12 @@
       }
     }
   }
+
+  button {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    padding: 0.7em 1em;
+    border: 2px solid var(--color-text);
+  }
 }
