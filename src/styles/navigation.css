@@ -2,7 +2,14 @@
   .nav_open,
   .nav_close {
     button {
-      display: none;
+      &:focus-visible {
+        + span {
+          /* focus-indicator */
+          outline: 2px solid var(--color-accent);
+          outline-offset: 4px;
+          box-shadow: 0 0 0 8px var(--color-base);
+        }
+      }
     }
 
     span {
