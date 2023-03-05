@@ -19,13 +19,13 @@
         <div>MENU</div>
       </label>
 
-      <dialog class="container">
+      <dialog class="container" aria-labelledby="nav_menu">
         <label class="nav_close">
           <button class="visually-hidden">CLOSE</button>
           <div>CLOSE</div>
         </label>
 
-        <h2>MENU</h2>
+        <h2 id="nav_menu">MENU</h2>
 
         <ul>
           <li>
@@ -175,13 +175,15 @@
           </p>
 
           <form>
-            氏名：<input name="name" />
+            <label>
+              <span>氏名：</span>
+              <input name="name" />
+            </label>
 
             <label class="tel">
               <span class="required">電話番号（必須）：</span>
-              <input name="tal1" required="required" /> -
-              <input name="tel2" required="required" /> -
-              <input name="tel3" required="required" />
+              <p>ハイフン・スペース無し、半角数字</p>
+              <input name="tal" required="required" />
             </label>
 
             <fieldset>
