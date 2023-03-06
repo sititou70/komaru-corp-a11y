@@ -35,12 +35,21 @@
             position: relative;
 
             input[type="radio"] {
-              display: none;
-
               &:checked {
                 + span {
                   &::before {
                     background-color: var(--color-accent);
+                  }
+                }
+              }
+
+              &:focus-visible {
+                + span {
+                  &::before {
+                    /* focus-indicator */
+                    outline: 2px solid var(--color-accent);
+                    outline-offset: 4px;
+                    box-shadow: 0 0 0 8px var(--color-base);
                   }
                 }
               }
