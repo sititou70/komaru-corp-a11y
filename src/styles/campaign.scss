@@ -1,3 +1,5 @@
+@import "./common.scss";
+
 .campaign {
   color: var(--color-base);
   background-color: var(--color-main);
@@ -31,12 +33,18 @@
             position: relative;
 
             input[type="radio"] {
-              display: none;
-
               &:checked {
                 + span {
                   &::before {
                     background-color: var(--color-accent);
+                  }
+                }
+              }
+
+              &:focus-visible {
+                + span {
+                  &::before {
+                    @extend .focus-indicator;
                   }
                 }
               }
