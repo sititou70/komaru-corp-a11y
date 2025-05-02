@@ -1,38 +1,35 @@
 {
-  "name": "a11y-training",
+  "name": "komaru-corp-a11y",
+  "description": "a11yを学習するために作成された、架空のWeb制作会社のサイトです。",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
+  "type": "module",
   "scripts": {
-    "start": "run-p sass:watch dev-server",
-    "dev-server": "cd src; browser-sync start --server --no-notify --no-ui --no-ghost-mode --files '**/*'",
-    "static-server": "cd src; http-server --port 8080",
-    "sass:build": "sass src/styles/index.scss src/styles/compiled.css",
-    "sass:watch": "sass -w src/styles/index.scss src/styles/compiled.css",
-    "cypress:open": "wait-on http://localhost:8080 && cypress open --e2e",
-    "cypress:run": "wait-on http://localhost:8080 && cypress run",
-    "test:open": "npm run sass:build && run-p cypress:open static-server",
-    "test": "run-p -r cypress:run static-server",
-    "build": "rm -rf dist && npm run sass:build && cp -r src dist && rm -rf dist/**/*.scss",
-    "build-gh-pages": "git checkout bad && npm run build && mv dist dist_bad && git checkout enhanced && npm run build && mv dist dist_enhanced && git checkout gh-pages && rm -rf bad enhanced && mv dist_bad bad && mv dist_enhanced enhanced",
-    "postinstall": "cp -r node_modules/normalize.css/normalize.css src/styles"
+    "start": "npm run dev",
+    "dev": "vite --open",
+    "build": "vite build",
+    "preview": "npm run build && vite preview",
+    "cypress:open": "wait-on http://localhost:4173 && cypress open --e2e",
+    "cypress": "wait-on http://localhost:4173 && cypress run",
+    "test:open": "run-p -r preview cypress:open",
+    "test": "run-p -r preview cypress",
+    "postinstall": "cp -r node_modules/normalize.css/normalize.css src/styles",
+    "build-gh-pages": "git checkout bad && npm run build && mv dist dist_bad && git checkout enhanced && npm run build && mv dist dist_enhanced && git checkout gh-pages && rm -rf bad enhanced && mv dist_bad bad && mv dist_enhanced enhanced"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@testing-library/cypress": "9.0.0",
-    "browser-sync": "2.27.12",
-    "http-server": "14.1.1",
+    "@testing-library/cypress": "10.0.3",
     "npm-run-all": "4.1.5",
-    "wait-on": "7.0.1"
+    "vite": "6.3.1",
+    "wait-on": "8.0.3"
   },
   "dependencies": {
-    "normalize.css": "8.0.1",
-    "sass": "1.58.3"
+    "normalize.css": "8.0.1"
   },
   "engines": {
-    "node": "20.13.1",
-    "npm": "10.5.2"
+    "node": "22.15.0",
+    "npm": "10.9.2"
   }
 }

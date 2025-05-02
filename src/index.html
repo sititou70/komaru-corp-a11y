@@ -2,15 +2,17 @@
 <html lang="ja">
   <head>
     <title>株式会社Komaru</title>
+
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <link rel="icon" href="./assets/favicon.png" />
 
     <link rel="stylesheet" href="./styles/normalize.css" />
-    <link rel="stylesheet" href="./styles/compiled.css" />
+    <link rel="stylesheet" href="./styles/index.css" />
 
-    <script src="./scripts/nav.js" defer></script>
-    <script src="./scripts/campaign.js" defer></script>
-    <script src="./scripts/intersectionUtil.js" defer></script>
+    <script type="module" src="./scripts/nav.js"></script>
+    <script type="module" src="./scripts/campaign.js"></script>
+    <script type="module" src="./scripts/intersectionUtil.js"></script>
   </head>
   <body>
     <header class="header">
@@ -227,13 +229,13 @@
     <nav class="navigation">
       <label class="nav_open">
         <button>MENU</button>
-        <div>MENU</div>
+        <span>MENU</span>
       </label>
 
       <div class="container">
         <label class="nav_close">
           <button>CLOSE</button>
-          <div>CLOSE</div>
+          <span>CLOSE</span>
         </label>
 
         <h2>MENU</h2>
