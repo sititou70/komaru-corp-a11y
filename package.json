@@ -5,31 +5,28 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "npm run dev",
     "dev": "vite --open",
     "build": "vite build",
-    "preview": "npm run build && vite preview",
-    "cypress:open": "wait-on http://localhost:4173 && cypress open --e2e",
-    "cypress": "wait-on http://localhost:4173 && cypress run",
-    "test:open": "run-p -r preview cypress:open",
-    "test": "run-p -r preview cypress",
+    "preview": "pnpm build && vite preview",
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "preinstall": "npx only-allow pnpm",
     "postinstall": "cp -r node_modules/normalize.css/normalize.css src/styles",
-    "build-gh-pages": "git checkout bad && npm run build && mv dist dist_bad && git checkout enhanced && npm run build && mv dist dist_enhanced && git checkout gh-pages && rm -rf bad enhanced && mv dist_bad bad && mv dist_enhanced enhanced"
+    "build-gh-pages": "git checkout bad && pnpm build && mv dist dist_bad && git checkout enhanced && pnpm build && mv dist dist_enhanced && git checkout gh-pages && rm -rf bad enhanced && mv dist_bad bad && mv dist_enhanced enhanced"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@testing-library/cypress": "10.0.3",
-    "npm-run-all": "4.1.5",
-    "vite": "6.3.1",
-    "wait-on": "8.0.3"
+    "@playwright/test": "1.60.0",
+    "vite": "8.0.16"
   },
   "dependencies": {
     "normalize.css": "8.0.1"
   },
+  "packageManager": "pnpm@11.4.0",
   "engines": {
-    "node": "22.15.0",
-    "npm": "10.9.2"
+    "node": "24.16.0",
+    "pnpm": "11.4.0"
   }
 }

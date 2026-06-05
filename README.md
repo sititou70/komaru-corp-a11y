@@ -9,12 +9,12 @@ a11y を学習するために作成された、架空の Web 制作会社のサ�
 
 ランタイム：
 
-- Node.js (22.15.0)
-- npm (10.9.2)
+- Node.js (24.16.0)
+- pnpm (11.4.0)
 
 ```sh
 cd komaru-corp-a11y
-npm i
+pnpm i
 ```
 
 ### VS Code を使用する場合
@@ -32,7 +32,14 @@ code .
 
 ```sh
 cd komaru-corp-a11y
-npm start
+pnpm dev
+```
+
+## テスト
+
+```sh
+pnpm exec playwright install chromium --with-deps # 初回のみ
+pnpm test
 ```
 
 ## フリー画像の出典
