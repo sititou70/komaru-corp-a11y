@@ -1,7 +1,4 @@
 .navigation {
-  position: fixed;
-  z-index: var(--zindex-level1);
-
   .nav_open,
   .nav_close {
     button {
