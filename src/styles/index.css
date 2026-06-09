@@ -1,7 +1,7 @@
-@import url("./vars.css");
-@import url("./common.css");
+@import url("./variables.css");
+@import url("./global.css");
 
-@import url("./nav.css");
+@import url("./navigation.css");
 
 @import url("./hero.css");
 
